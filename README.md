@@ -3,8 +3,6 @@
 > **tusfastapiserver** is a FastAPI extension implementing the [Tus.io resumable upload protocol](http://www.tus.io/protocols/resumable-upload.html), allowing resumable file uploads for handling large file transfers with ease.
 ---
 
----
-
 ## Features
 
 This library supports the following Tus.io protocol extensions:
