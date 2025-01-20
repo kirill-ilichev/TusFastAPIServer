@@ -9,14 +9,14 @@
 
 This library supports the following Tus.io protocol extensions:
 
-| Extension   | `file-store` | `s3-store` | `gcs-store` | `azure-store` |
-| ----------- | ------------------------------- | --------------------------- | ----------------------------- | --------------------------------- |
-| Creation    | ✅                              | ❌                          | ❌                            | ❌                                |
-| Creation With Upload | ❌                              | ❌                          | ❌                            | ❌                                |
-| Expiration  | ❌                              | ❌                          | ❌                            | ❌                                |
-| Checksum    | ❌                              | ❌                          | ❌                            | ❌                                |
-| Termination | ❌                              | ❌                          | ❌                            | ❌                                |
-| Concatenation | ❌                              | ❌                          | ❌                            | ❌                                |
+| Extension   | `local-store` |
+| ----------- |---------------|
+| Creation    | ✅             |
+| Creation With Upload | ❌             |
+| Expiration  | ❌             |
+| Checksum    | ❌             |
+| Termination | ❌             |
+| Concatenation | ❌             |
 
 ---
 
