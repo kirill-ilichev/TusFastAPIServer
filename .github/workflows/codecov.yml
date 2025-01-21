@@ -17,7 +17,7 @@ jobs:
         uses: actions/setup-python@v4
 
       - name: Install dependencies
-        run: pip install pytest pytest-cov
+        run: pip install pytest pytest-cov fastapi
 
       - name: Run tests
         run: pytest --cov-branch --cov-report=xml
