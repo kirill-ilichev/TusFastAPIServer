@@ -25,7 +25,7 @@ jobs:
 
       - name: Run tests
         run: |
-          poetry run pytest --cov=src --cov-report=term-missing --cov-report=xml
+          poetry run pytest --cov=tusfastapiserver --cov-report=term-missing --cov-report=xml tests/
 
       - name: Upload to Coveralls
         run: |
