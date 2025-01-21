@@ -12,12 +12,16 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
       - name: Set up Python
         uses: actions/setup-python@v4
+
       - name: Install dependencies
         run: pip install pytest pytest-cov fastapi
+
       - name: Run tests
         run: pytest --cov-branch --cov-report=xml
+
       - name: Upload results to Codecov
         uses: codecov/codecov-action@v5
         with:
