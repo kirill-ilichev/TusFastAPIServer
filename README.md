@@ -1,5 +1,7 @@
 # tusfastapiserver
 
+[![Coverage Status](https://coveralls.io/repos/github/kirill-ilichev/TusFastAPIServer/badge.svg?branch=main)](https://coveralls.io/github/kirill-ilichev/TusFastAPIServer?branch=main)
+
 > **tusfastapiserver** is a FastAPI extension implementing the [Tus.io resumable upload protocol](http://www.tus.io/protocols/resumable-upload.html), allowing resumable file uploads for handling large file transfers with ease.
 ---
 
