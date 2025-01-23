@@ -59,6 +59,10 @@ config = Config(
 add_tus_routers(app, config)
 ```
 
+In this example, when a request is sent to the `/files/` endpoint, two files are created:
+1.	A file containing upload metadata (information about the current stage of the file upload process). This file is saved in the `/path/to/store/metadata` directory.
+2.	The uploaded file itself. This file is saved in the `/path/to/upload/files` directory.
+
 ---
 
 ## Customization
