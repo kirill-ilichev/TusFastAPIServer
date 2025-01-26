@@ -3,6 +3,8 @@ import json
 from pathlib import Path
 
 from tusfastapiserver.schemas import UploadMetadata
+from tusfastapiserver.schemas import UploadMetadataPath
+
 from tusfastapiserver.metadata import BaseMetadataStrategy
 from tusfastapiserver.config import MetadataStrategyType
 
@@ -10,9 +12,11 @@ from tusfastapiserver.config import MetadataStrategyType
 class LocalMetadataStrategy(BaseMetadataStrategy):
     metadata_strategy_type = MetadataStrategyType.LOCAL
 
-    def generate_metadata_path(self, file_id: str) -> str:
+    def generate_metadata_path(self, file_id: str) -> UploadMetadataPath:
         file_name = f"{file_id}.json"
-        return os.path.join(self.config.metadata_path, os.path.join(file_id, file_name))
+        return UploadMetadataPath(
+            os.path.join(self.config.metadata_path, os.path.join(file_id, file_name))
+        )
 
     def is_metadata_exists(self, file_id: str) -> bool:
         return os.path.exists(self.generate_metadata_path(file_id))
@@ -22,7 +26,7 @@ class LocalMetadataStrategy(BaseMetadataStrategy):
             return UploadMetadata(**json.load(f))
 
     @staticmethod
-    def _check_or_make_folder(path: str) -> None:
+    def _check_or_make_folder(path: UploadMetadataPath) -> None:
         Path(path).parent.mkdir(parents=True, exist_ok=True)
 
     @staticmethod

@@ -28,9 +28,7 @@ class PatchRouter(BaseRouter):
     def _get_router_path(self) -> str:
         return self.config.patch_router_path
 
-    async def handle(
-        self, file_id: str, request: Request, response: Response
-    ):
+    async def handle(self, file_id: str, request: Request, response: Response):
         logger.info(f"Handling PATCH request for file_id: {file_id}")
         self._validate_file_id(file_id)
         self._validate_headers(request)
@@ -116,7 +114,9 @@ class PatchRouter(BaseRouter):
     def _compare_upload_offset_with_metadata(
         upload_offset: str, metadata: UploadMetadata
     ):
-        logger.debug(f"Comparing upload offset: {upload_offset} with metadata offset: {metadata.upload_offset}")
+        logger.debug(
+            f"Comparing upload offset: {upload_offset} with metadata offset: {metadata.upload_offset}"
+        )
         if int(upload_offset) != metadata.upload_offset:
             logger.error("Mismatch upload offset")
             raise MismatchUploadOffsetException()
@@ -125,7 +125,9 @@ class PatchRouter(BaseRouter):
     def _compare_upload_length_with_metadata(
         upload_length: Optional[str], metadata: UploadMetadata
     ):
-        logger.debug(f"Comparing upload length: {upload_length} with metadata length: {metadata.upload_length}")
+        logger.debug(
+            f"Comparing upload length: {upload_length} with metadata length: {metadata.upload_length}"
+        )
         if upload_length is not None:
             if not upload_length.isdigit():
                 raise InvalidUploadLengthException()
